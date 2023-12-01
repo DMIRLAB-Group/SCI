@@ -1,0 +1,1 @@
+goodtg --config_path GOOD_configs/GOODHIV/size/covariate/SCI.yaml --random_seed 666 --task test

@@ -1,0 +1,28 @@
+includes:
+  - base.yaml
+model:
+  model_name: SCI2
+  dropout: 0
+  emb_dim1: 300
+  emb_dim2: 300
+  dim_hidden: 300
+  model_layer: 3
+ood:
+  ood_alg: SCI2
+  y_loss_para: 1.0
+  g1_loss_para: 1e-4
+  k1_loss_para: 1e-4
+  x1_loss_para: 1e-4
+  gh_sparity_para: 1e-4
+  gh_sparity_loss_para:  1e-4
+  gn_sparity_loss_para:  1e-4
+  Lr_para: 1e-4
+  KL_para: 1e-4
+  ood_param: 1.0    # info loss coefficient
+train:
+  max_epoch: 200
+  lr: 1e-3
+  decoder_lr: 0.0005
+  mile_stones: [150]
+  val_bs: 32
+  test_bs: 32

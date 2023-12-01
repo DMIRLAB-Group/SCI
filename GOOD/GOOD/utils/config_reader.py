@@ -253,8 +253,5 @@ def config_summoner(args: CommonArgs) -> Union[CommonArgs, Munch]:
     args2config(config, args)
     config = munchify(config)
     process_configs(config)
-<<<<<<< HEAD
     config.best_model_path = args.best_model_path   
-=======
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
     return config

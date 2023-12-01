@@ -23,11 +23,7 @@ from rdkit import Chem
 parser = argparse.ArgumentParser()
 parser.add_argument('--device', type=int, help='which gpu to use if any (default: 0)')
 parser.add_argument('--path', type=str, default='data/bace.csv', help='which path ')
-<<<<<<< HEAD
-parser.add_argument('--save_path', type=str, default='saved_models/', help='which save_path')
-=======
-parser.add_argument('--save_path', type=str, default='saved_models/model_', help='which save_path ')
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
+parser.add_argument('--save_path', type=str, default='saved_models/', help='which save_path ')
 parser.add_argument('--epochs', type=int, help='number of epochs to train ')
 parser.add_argument('--batch_size', type=int, help='input batch size for training ')
 parser.add_argument('--p_dropout', type=float, help='dropout radio')
@@ -229,11 +225,6 @@ best_param["test_loss"] = 9e8
 for epoch in range(args.epochs):
 
     valid_roc, valid_loss = eval(model, valid_df)
-<<<<<<< HEAD
-=======
-    #test_roc, test_losses = eval(model, test_df)
-
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
     valid_roc_mean = np.array(valid_roc).mean()
     if valid_roc_mean > best_param["valid_roc"]:
         best_param["roc_epoch"] = epoch

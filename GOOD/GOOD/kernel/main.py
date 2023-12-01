@@ -59,11 +59,7 @@ def main():
 
     if config.task == 'train':
         pipeline.task = 'test'
-<<<<<<< HEAD
         pipeline.config_model(pipeline.task)
-=======
-        pipeline.load_task()
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
     T2 = time.time()
     print()
     print(f'#IN#程序运行时间:{((T2 - T1)/60)}分')

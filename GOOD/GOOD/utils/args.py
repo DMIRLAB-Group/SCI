@@ -9,10 +9,6 @@ from typing_extensions import Literal
 
 from GOOD.definitions import ROOT_DIR
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
 class TrainArgs(Tap):
     r"""
     Correspond to ``train`` configs in config files.
@@ -118,12 +114,8 @@ class CommonArgs(Tap):
     r"""
     Correspond to general configs in config files.
     """
-<<<<<<< HEAD
     config_path: str = 'GOOD_configs/GOODHIV/scaffold/covariate/SCI.yaml'  #: (Required) The path for the config file.
     best_model_path: str = 'best_model'
-=======
-    config_path: str = 'GOOD_configs/GOODHIV/scaffold/covariate/DIR1.yaml'  #: (Required) The path for the config file.
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
 
     task: Literal['train', 'test'] = None  #: Running mode. Allowed: 'train' and 'test'.
     random_seed: int = None  #: Fixed random seed for reproducibility.
@@ -167,11 +159,8 @@ class CommonArgs(Tap):
         if not os.path.isabs(self.config_path):
             self.config_path = opj(ROOT_DIR, 'configs', self.config_path)
 
-<<<<<<< HEAD
         self.best_model_path = opj(ROOT_DIR, self.best_model_path)
 
-=======
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
         self.dataset = DatasetArgs().parse_args(args=self.argv, known_only=True)
         self.train = TrainArgs().parse_args(args=self.argv, known_only=True)
         self.model = ModelArgs().parse_args(args=self.argv, known_only=True)

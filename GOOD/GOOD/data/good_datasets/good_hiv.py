@@ -92,10 +92,6 @@ class GOODHIV(InMemoryDataset):
         subset_pt = shift_mode[shift] + mode[subset]
 
         self.data, self.slices = torch.load(self.processed_paths[subset_pt])
-<<<<<<< HEAD
-=======
-        print(' ')
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
 
 
     @property
@@ -352,15 +348,8 @@ class GOODHIV(InMemoryDataset):
         print('#IN#No shift dataset done!')
         sorted_data_list, sorted_domain_split_data_list = self.get_domain_sorted_list(data_list, domain=self.domain)
         covariate_shift_list = self.get_covariate_shift_list(deepcopy(sorted_data_list))
-<<<<<<< HEAD
         print('#IN#Covariate shift dataset done!')
         concept_shift_list = self.get_concept_shift_list(deepcopy(sorted_domain_split_data_list))
-=======
-        print()
-        print('#IN#Covariate shift dataset done!')
-        concept_shift_list = self.get_concept_shift_list(deepcopy(sorted_domain_split_data_list))
-        print()
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
         print('#IN#Concept shift dataset done!')
 
         all_data_list = no_shift_list + covariate_shift_list + concept_shift_list
@@ -427,10 +416,3 @@ class GOODHIV(InMemoryDataset):
                 'val': val_dataset, 'test': test_dataset, 'task': train_dataset.task,
                 'metric': train_dataset.metric}, meta_info
 
-<<<<<<< HEAD
-=======
-
-
-# hiv_datasets, hiv_meta_info = GOODHIV.load('/mnt/nas/yzh_test/GOOD-GOODv1/storage/datasets', domain='scaffold', shift='covariate', generate=False)
-# print(hiv_datasets)
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414

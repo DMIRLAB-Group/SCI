@@ -230,16 +230,11 @@ class Pipeline:
             # test_score, test_loss = self.config_model('test')
         elif self.task == 'test':
             # config model
-<<<<<<< HEAD
             self.model.load_state_dict(torch.load(
                 f'{self.config.best_model_path}/{self.config.dataset.dataset_name}_{self.config.dataset.domain}_{self.config.random_seed}.pth'))
             self.model.to('cuda')
             test_stat = self.evaluate('test')
             print('#D#Config model and output the best checkpoint info...')
-=======
-            print('#D#Config model and output the best checkpoint info...')
-            test_score, test_loss = self.config_model('test')
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
 
     def config_model(self, mode: str, load_param=False):
         r"""
@@ -373,21 +368,13 @@ class Pipeline:
                 config.metric.best_stat['score']:
             config.metric.best_stat['score'] = val_stat['score']
             config.metric.best_stat['loss'] = val_stat['loss']
-<<<<<<< HEAD
             torch.save(self.model.state_dict(),
                        f'{self.config.best_model_path}/{self.config.dataset.dataset_name}_{self.config.dataset.domain}_{self.config.random_seed}.pth')
-=======
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
             test_stat = self.evaluate('test')
             ckpt['test_score'] =  test_stat['score']
             ckpt['test_loss'] = test_stat['loss']
             saved_file = os.path.join(config.ckpt_dir, f'best.ckpt')
             torch.save(ckpt, saved_file)
-<<<<<<< HEAD
-=======
-            torch.save(self.model.state_dict(),
-                       f'SCI_{self.config.dataset.dataset_name}_{self.config.random_seed}_best_model.pth')
->>>>>>> f5a25d94109061f21df03e230253ab76c9bde414
             print('#IM#Saved a new best checkpoint.')
         if config.clean_save:
             os.unlink(saved_file)
